@@ -8,3 +8,25 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+.mainHeading {
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.image {
+    width: 15%;
+    height: 15%;
+}
+
+@media (max-width: 770px) {
+    .container {
+        margin: 0 10%;
+    }
+    .mainHeading {
+        font-size: 25px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .image {
+        width: 30%;
+        height: 30%;
+    }
+}
