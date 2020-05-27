@@ -5,26 +5,38 @@ import styles from './App.module.css';
 import { fetchData } from './api';
 
 class App extends Component {
+  
   state = {
-    data: {}
+    data: {},
+    country: ""
   }
+
   async componentDidMount() {
     const fetchedData = await fetchData();
     this.setState({
       data: fetchedData
     })
   }
+
+  handleCountryPicker = async (country) => {
+    const fetchedData = await fetchData(country);
+    console.log(fetchedData);
+    this.setState({data: fetchedData, country: country})
+  }
+
   render() {
-    const { data } = this.state;
+    const { data, country } = this.state;
     return (
       <div className={styles.container}>
         <img
           src="https://media.giphy.com/media/SxKiUZFgroqSk3evB7/giphy.gif"
-          style={{ width: "10%", height: "10%" }}
+          alt="COVID-19"
+          className={styles.image}
         />
+        <h2 className={styles.mainHeading}>COVID-19 DASHBORD APP</h2>
         <Cards data={data} />
-        <CountryPicker />
-        <Chart />
+        <CountryPicker handleCountryPicker={this.handleCountryPicker} />
+        <Chart data={data} country={country} />
       </div>
     )
   }
