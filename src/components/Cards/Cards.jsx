@@ -13,7 +13,7 @@ const Cards = ({data: {confirmed, deaths, recovered, lastUpdate}}) => {
             <Grid container justify="center" spacing={3}>
                 <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Infected</Typography>
+                        <Typography color="textSecondary" gutterBottom>Confirmed</Typography>
                             <Typography variant="h5">
                                 <CountUp start={0} end={confirmed.value} duration={2.5} separator="," />
                             </Typography>
