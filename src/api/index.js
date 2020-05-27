@@ -39,7 +39,3 @@ export const fetchCountries = async () => {
         console.log(error)
     }
 }
-
-export const countryWiseData = async (country) => {
-    console.log(country);
-}
